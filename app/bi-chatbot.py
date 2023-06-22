@@ -88,7 +88,7 @@ with col1:
         col121, col122 = st.columns(spec=[3, 1], gap='medium')
 
         with col121:
-            profile = st.button('🙌🏼 Please show me data profile.')
+            profile = st.button('🙌🏼 Please show me the data profile.')
         
         with col122:
             walker = st.button('🤟🏼 I wanna try it myself!')
