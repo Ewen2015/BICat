@@ -4,6 +4,6 @@ langchain==0.0.191
 openai==0.27.6
 faiss-cpu==1.7.4
 tiktoken==0.4.0
-pandasai==0.5.5
-pandas_profiling==3.6.3
+pandasai
+pandas_profiling
 streamlit_pandas_profiling==0.1.3
