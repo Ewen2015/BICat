@@ -8,14 +8,11 @@ license:    Apache License 2.0
 """
 import os
 import pandas as pd
+import seaborn as sns
 
 import streamlit as st
 from streamlit_chat import message
 import tempfile
-
-import pandas_profiling
-from streamlit_pandas_profiling import st_profile_report
-import seaborn as sns
 
 from pandasai.llm.openai import OpenAI
 from pandasai import PandasAI
@@ -52,7 +49,7 @@ with st.expander("About this app"):
     to generate insights and predictions in real-time. With Large Language Model-powered BI, \
     businesses can make faster, more informed decisions that drive growth and profitability.")
 
-col1, col2 = st.columns(spec=[5, 3], gap='large')
+col1, col2 = st.columns(spec=[7, 3], gap='large')
 
 
 with col1:
@@ -88,19 +85,36 @@ with col1:
         else:
             st.dataframe(df)
 
-        if st.button('🙌🏼 Please show me data profile.'):
+        col121, col122 = st.columns(spec=[3, 1], gap='medium')
+
+        with col121:
+            profile = st.button('🙌🏼 Please show me data profile.')
+        
+        with col122:
+            walker = st.button('🤟🏼 I wanna try it myself!')
+
+        if profile:
+            import pandas_profiling
+            from streamlit_pandas_profiling import st_profile_report
+
             pr = df.profile_report()
             st_profile_report(pr)
 
             # module.collapse_side_bar()
             # module.add_back_to_top_button()
 
+        if walker:
+            import pygwalker as pyg
+
+            pyg.walk(df, env="Streamlit", dark="light")
+
+
 
 with col2: 
 
     st.subheader("🍪 Talk to your data!")
 
-    message("Hi there! 👋 Set up your API KEY before talk!", avatar_style="big-smile")
+    message("Hi there! 👋🏼 Set up your API KEY before talk!", avatar_style="big-smile")
 
     if uploaded_file:
 
