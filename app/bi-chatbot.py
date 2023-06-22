@@ -97,10 +97,10 @@ with col1:
 with col2: 
 
     st.subheader("🍪 Talk to your data!")
+    
+    message("Hi there! 👋 Set up your API KEY before talk!", avatar_style="big-smile")
 
     if uploaded_file:
-
-        message("Hi there! 👋 Set up your API KEY before talk!", avatar_style="big-smile")
 
         if user_api_key:
 
