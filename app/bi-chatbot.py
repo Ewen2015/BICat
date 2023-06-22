@@ -66,11 +66,11 @@ with col1:
         col11, col12, col13 = st.columns(spec=3, gap='medium')
        
         with col11: 
-            index_col = st.selectbox("Select the index column", df.columns)
+            index_col = st.selectbox("Select the index column", [None] + list(df.columns))
         with col12: 
-            heighlight = st.selectbox("Hightlight on", [False, "rows", "column", "both"])
+            heighlight = st.selectbox("Hightlight on", [None, "rows", "column", "both"])
         with col13: 
-            precision = st.selectbox("Precision to", [0, 1, 2, 4])
+            precision = st.selectbox("Precision to", [None, 0, 1, 2, 4])
 
         if index_col:
             df.set_index(index_col, inplace=True)
