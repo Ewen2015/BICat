@@ -57,7 +57,7 @@ col1, col2 = st.columns(spec=[5, 3], gap='large')
 
 with col1:
 
-    st.subheader("🍕 Data Preview:")
+    st.subheader("🍕 Data preview:")
 
     if uploaded_file :
         with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
@@ -66,22 +66,24 @@ with col1:
 
         df = pd.read_csv(uploaded_file)
 
-        col11, col12 = st.columns(spec=2, gap='large')
+        col11, col12, col13 = st.columns(spec=3, gap='medium')
        
         with col11: 
             index_col = st.selectbox("Select the index column", df.columns)
         with col12: 
             heighlight = st.selectbox("Hightlight on", [False, "rows", "column", "both"])
-        
+        with col13: 
+            precision = st.selectbox("Precision to", [0, 1, 2, 4])
+
         if index_col:
             df.set_index(index_col, inplace=True)
 
         if heighlight in ["rows", "column"]:
-            styled_df = df.style.highlight_max(axis=1 if heighlight == "rows" else 0, 
-                                               props='color:white; font-weight:bold; background-color:purple;')
+            styled_df = df.style.format(precision=precision).highlight_max(axis=1 if heighlight == "rows" else 0, 
+                        props='color:white; font-weight:bold; background-color:purple;')
             st.dataframe(styled_df)
         elif heighlight == "both":
-            styled_df = df.style.background_gradient(cmap=cm)
+            styled_df = df.style.format(precision=precision).background_gradient(cmap=cm)
             st.dataframe(styled_df)
         else:
             st.dataframe(df)
@@ -97,7 +99,7 @@ with col1:
 with col2: 
 
     st.subheader("🍪 Talk to your data!")
-    
+
     message("Hi there! 👋 Set up your API KEY before talk!", avatar_style="big-smile")
 
     if uploaded_file:
