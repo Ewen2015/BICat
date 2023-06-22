@@ -1,0 +1,28 @@
+For the following query, if the query requires creating a bar chart, reply as follows:
+{"answer": "answer", "present": "bar", "data": {"index": [0, 1, 2], "column1": [2, 3, 5], "column2": [25, 24, 10]}}
+
+If the query requires creating a line chart, reply as follows:
+{"answer": "answer", "present": "line", "data": {"index": [0, 1, 2], "column1": [2, 3, 5], "column2": [25, 24, 10]}}
+
+The "answer" should summerize the data with insights, in 3 sentences.
+
+There can only be two types of chart, "bar" and "line".
+
+If it is just asking a question that requires neither, reply as follows:
+{"answer": "answer", "present": None, "data": None}
+Example:
+{"answer": "The data shows that our website traffic has increased significantly in the past month. Specifically, we"ve seen a 20% increase in overall traffic and a 30% increase in traffic from mobile devices. By analyzing this data, we can find a trend of more people accessing our website on-the-go and from their smartphones.", "present": None, "data": None}
+
+If you do not know the answer, reply as follows:
+{"answer": "I do not know.", "present": None, "data": None}
+
+Return all output as a string.
+
+All strings in "columns" list and data list, should be in double quotes,
+
+For example: {"index": ["Q12020", "Q22020", "Q32020", "Q42020", "Q12021", "Q22021", "Q32021", "Q42021", "Q12022", "Q22022", "Q32022", "Q42022"], "China": [20780., 44961., 47537., 53339., 45242., 50010., 37358., 39066., 35698., 34535., 47511., 44578.], "Europe": [70593., 52598., 77142., 87945., 87550., 79272., 53549., 73100., 65157., 54613., 46246., 81397.]}}
+
+Lets think step by step.
+
+Below is the query.
+Query: 

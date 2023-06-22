@@ -6,50 +6,76 @@ author:     Ewen Wang
 email:      wolfgangwong2012@gmail.com
 license:    Apache License 2.0
 """
+import os
 import json
-from langchain import OpenAI
-from langchain.agents import create_pandas_dataframe_agent
 import pandas as pd
 
 import streamlit as st
+
 import plotly.express as px
 import plotly.io as pio
 
-def create_agent(filename, api_key):
-    """
-    Create an agent that can access and use a large language model (LLM).
 
-    Args:
-        filename (str): The path to the CSV file that contains the data.
-        api_key (str): The OpenAI API key.
-        
-    Returns:
-        An agent that can access and use the LLM.
-    """
+def create_pandasai_chat(df, api_key):
+    from pandasai.llm.openai import OpenAI
+    from pandasai import PandasAI
+
+    os.environ['OPENAI_API_KEY'] = api_key
+
+    llm = OpenAI(api_token=api_key)
+    pandas_ai = PandasAI(llm)
+
+    def conversational_chat(query):
+        result = pandas_ai(df, prompt=query, is_conversational_answer=True)
+        return result
+
+    return conversational_chat
+
+
+def create_conversational_chat(filename, api_key):
+    from langchain.document_loaders.csv_loader import CSVLoader
+    from langchain.embeddings.openai import OpenAIEmbeddings
+    from langchain.vectorstores import FAISS
+    from langchain.chains import ConversationalRetrievalChain
+    from langchain.chat_models import ChatOpenAI
+
+    os.environ['OPENAI_API_KEY'] = api_key
+
+    loader = CSVLoader(file_path=filename, encoding="utf-8")
+    data = loader.load()
+
+    embeddings = OpenAIEmbeddings()
+    vectors = FAISS.from_documents(data, embeddings)
+
+    chain = ConversationalRetrievalChain.from_llm(llm = ChatOpenAI(temperature=0.0, model_name='gpt-3.5-turbo'),
+        retriever=vectors.as_retriever())
+
+    def conversational_chat(query):
+        result = chain({"question": query, "chat_history": st.session_state['history']})
+        return result
+
+    return conversational_chat
+
+
+def create_homemake_chatbot(df, api_key, prompteng_file='prompteng.txt'):
+    from langchain import OpenAI
+    from langchain.agents import create_pandas_dataframe_agent
+
     llm = OpenAI(openai_api_key=api_key)
-    df = pd.read_csv(filename)
-    return create_pandas_dataframe_agent(llm, df, verbose=False)
+    agent = create_pandas_dataframe_agent(llm, df, verbose=False)
 
-
-def query_agent(agent, query, prompteng_file='prompteng.txt'):
-    """
-    Query an agent and return the response as a string.
-
-    Args:
-        agent: The agent to query.
-        query (str): The query to ask the agent.
-        prompteng_file (str): The prompt engineering filename, default 'prompteng.txt'.
-
-    Returns:
-        The response from the agent as a string.
-    """
     with open(prompteng_file) as f:
         prompteng = f.read()
-        
-    prompt = (prompteng + query)
-    response = agent.run(prompt)
 
-    return response.__str__()
+    def conversational_chat(query):
+        prompt = (prompteng + query)
+        result = agent.run(prompt)
+        result = result.__str__()   
+        return result
+
+    return conversational_chat
+
+
 
 
 def present_response(response_dict, style='streamlit'):
