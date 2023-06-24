@@ -29,7 +29,7 @@ Just click [bi-chatbot](https://aibicat.streamlit.app).
 2. Navigate to the project directory:
 
    ```shell
-   cd bi-chat
+   cd bi-chatbot
    ```
 
 3. Install dependencies:
