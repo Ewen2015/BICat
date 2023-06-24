@@ -54,9 +54,10 @@ col1, col2 = st.columns(spec=[7, 3], gap='large')
 
 with col1:
 
-    st.subheader("🍕 Data preview:")
+    st.subheader("🍕 Play with your data!")
 
     if uploaded_file :
+        st.write("### 🍩 Data preview")
         with tempfile.NamedTemporaryFile(delete=False) as tmp_file:
             tmp_file.write(uploaded_file.getvalue())
             tmp_file_path = tmp_file.name
