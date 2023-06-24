@@ -38,7 +38,7 @@ Just click [bi-chatbot](https://aibicat.streamlit.app).
    streamlit run app/bi-chat.py
    ```
 
-Once the Streamlit application is running, open it in your browser to interact with ChatGPT.
+Once the Streamlit application is running, open it in your browser to play and talk to your data!
 
 ## 🍻 Contributing
 
