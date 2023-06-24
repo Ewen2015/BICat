@@ -1,5 +1,11 @@
 # BI-Chatbot: AI-Powered BI
 
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)\
+[![strealit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white
+)](https://streamlit.io/)
+[![ChatGPT](https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white)](https://platform.openai.com)
+
 A project utilizing [OpenAI ChatGPT](https://openai.com), [PyGWalker](https://docs.kanaries.net/pygwalker), and [ydata-profiling](https://ydata-profiling.ydata.ai) for interactive data analysis and visualization using [Streamlit](https://streamlit.io/).
 
 ## 🍓 Preview
