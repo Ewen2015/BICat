@@ -41,7 +41,7 @@ Just click [bi-chatbot](https://aibicat.streamlit.app).
 4. Start the Streamlit application:
 
    ```shell
-   streamlit run app/bi-chat.py
+   streamlit run app/bi-chatbot.py
    ```
 
 Once the Streamlit application is running, open it in your browser to play and talk to your data!
