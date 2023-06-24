@@ -6,7 +6,13 @@ A project utilizing [OpenAI ChatGPT](https://openai.com), [PyGWalker](https://do
 
 ![preview](/image/preview.png)
 
-## 🍕 Installation
+## 🍪 Usage
+
+### 🐣 Cloud
+
+Just click [bi-chatbot](https://aibicat.streamlit.app).
+
+### 🍕 Local
 
 1. Clone the repository:
 
@@ -25,18 +31,14 @@ A project utilizing [OpenAI ChatGPT](https://openai.com), [PyGWalker](https://do
    ```shell
    pip install -r requirements.txt
    ```
-
-## 🍪 Usage
-
-Start the Streamlit application:
+   
+4. Start the Streamlit application:
 
    ```shell
    streamlit run app/bi-chat.py
    ```
 
 Once the Streamlit application is running, open it in your browser to interact with ChatGPT.
-
-
 
 ## 🍻 Contributing
 
