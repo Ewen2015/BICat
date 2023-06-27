@@ -46,7 +46,7 @@ Just click [bi-chatbot](https://aibicat.streamlit.app).
 
 Once the Streamlit application is running, open it in your browser to play and talk to your data!
 
-## Tech Stack
+## 🍔 Tech Stack
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/Ewen2015/bi-chatbot/master/image/tech-stack.png">
