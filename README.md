@@ -52,6 +52,17 @@ Once the Streamlit application is running, open it in your browser to play and t
 <img src="https://raw.githubusercontent.com/Ewen2015/bi-chatbot/master/image/tech-stack.png">
 </p>
 
+## Challenges
+
+1. Prompt Engineering: to build a bridge between the LLM and domain knowledge.
+2. Data Preparation: data is still the key to a better BI.
+3. Presentation: great charts talk.
+
+## Reflections
+
+1. The LLM is changing the way people develop applications. Just take a look at [pandas-ai](https://github.com/gventuri/pandas-ai).
+2. Presenting meaningful work is more important than ever.
+
 ## 🍻 Contributing
 
 Contributions are welcome! To contribute to this project, follow these steps:
