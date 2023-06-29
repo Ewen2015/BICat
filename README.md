@@ -60,8 +60,9 @@ Once the Streamlit application is running, open it in your browser to play and t
 
 ## Reflections
 
-1. The LLM is changing the way people develop applications. Just take a look at [pandas-ai](https://github.com/gventuri/pandas-ai).
-2. Presenting meaningful work is more important than ever.
+1. This time, AI is really eating the world.
+2. The LLM is fundamentally changing the way people develop applications. Just take a look at [pandas-ai](https://github.com/gventuri/pandas-ai).
+3. Presenting meaningful work is more important than ever.
 
 ## 🍻 Contributing
 
