@@ -49,7 +49,7 @@ Once the Streamlit application is running, open it in your browser to play and t
 ## 🍔 Tech Stack
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/Ewen2015/bi-chatbot/master/image/tech-stack.png">
+<img src="https://raw.githubusercontent.com/Ewen2015/bi-chatbot/master/image/tech-stack.svg">
 </p>
 
 ## Challenges
