@@ -10,9 +10,9 @@ A project utilizing [OpenAI ChatGPT](https://openai.com), [PyGWalker](https://do
 
 ### Pain point to solve
 
-1. Exploratory Data Analysis (EDA) requires coding
-2. Unable to talk to your data with natural language
-3. PowerBI and Excel are too complicated and time-consuming
+1. Exploratory Data Analysis (EDA) requires **coding**
+2. Unable to **talk to your data** with natural language
+3. PowerBI and Excel are too **complicated** and **time-consuming**
 
 ## 🍓 Preview
 
