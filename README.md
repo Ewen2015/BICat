@@ -8,7 +8,7 @@
 
 A project utilizing [OpenAI ChatGPT](https://openai.com), [PyGWalker](https://docs.kanaries.net/pygwalker), and [ydata-profiling](https://ydata-profiling.ydata.ai) for interactive data analysis and visualization using [Streamlit](https://streamlit.io/).
 
-### Pain point to solve
+### Pain points to solve
 
 1. Exploratory Data Analysis (EDA) requires **coding**
 2. Unable to **talk to your data** with natural language
