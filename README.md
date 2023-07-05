@@ -8,17 +8,23 @@
 
 A project utilizing [OpenAI ChatGPT](https://openai.com), [PyGWalker](https://docs.kanaries.net/pygwalker), and [ydata-profiling](https://ydata-profiling.ydata.ai) for interactive data analysis and visualization using [Streamlit](https://streamlit.io/).
 
+### Pain point to solve
+
+1. Exploratory Data Analysis (EDA) requires coding
+2. Unable to talk to your data with natural language
+3. PowerBI and Excel are too complicated and time-consuming
+
 ## 🍓 Preview
 
 ![preview](/image/preview.png)
 
 ## 🍪 Usage
 
-### 🐣 Cloud
+### Cloud
 
 Just click [bi-chatbot](https://aibicat.streamlit.app).
 
-### 🍕 Local
+### Local
 
 1. Clone the repository:
 
@@ -52,13 +58,15 @@ Once the Streamlit application is running, open it in your browser to play and t
 <img src="https://raw.githubusercontent.com/Ewen2015/bi-chatbot/master/image/tech-stack.svg">
 </p>
 
-## Challenges
+## 🥛 Thinking
+
+### Challenges
 
 1. Prompt Engineering: to build a bridge between the LLM and domain knowledge.
 2. Data Preparation: data is still the key to a better BI.
 3. Presentation: great charts talk.
 
-## Reflections
+### Reflections
 
 1. This time, AI is really eating the world.
 2. The LLM is fundamentally changing the way people develop applications. Just take a look at [pandas-ai](https://github.com/gventuri/pandas-ai).
