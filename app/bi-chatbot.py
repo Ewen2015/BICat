@@ -121,8 +121,6 @@ with col2:
 
         if user_api_key:
 
-            st.balloons()
-
             # conversational_chat = agent.create_conversational_chat(filename=tmp_file_path, api_key=user_api_key)
             # conversational_chat = agent.create_homemake_chatbot(df=df, api_key=user_api_key)
             conversational_chat = agent.create_pandasai_chat(df=df, api_key=user_api_key)
