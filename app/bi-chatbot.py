@@ -67,7 +67,7 @@ with col1:
         col11, col12, col13 = st.columns(spec=3, gap='medium')
        
         with col11: 
-            index_col = st.selectbox("Select the index column", [None] + list(df.columns))
+            index_col = st.selectbox("Select the index column", list(df.columns)[:1] + [None] + list(df.columns)[1:])
         with col12: 
             heighlight = st.selectbox("Hightlight on", [None, "rows", "column", "both"])
         with col13: 
